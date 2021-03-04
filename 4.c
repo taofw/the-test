@@ -9,6 +9,5 @@
 
 int main()
 {
-	printf("123455\n");
 	printf("sa;afs;dga\n");
 }
