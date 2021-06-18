@@ -1,0 +1,76 @@
+获取ssh秘钥 ssh-keygen
+
+git配置个人用户名称和电子邮件地址
+	git config --global user.name "runoob"
+	git config --global user.email test@runoob.com
+	git config --global color.ui true		：配置ui彩色显示
+
+git创建仓库
+	git init 	：初始化一个git仓库
+	git init 目录名	：指定目录下创建
+
+	git add 文件名(*.c) 	：添加目录下（所有.c)文件到仓库
+	git commit -m "****"	：提交暂存区到本地仓库
+	git commit --amend	：修改提交信息，Ctrl+o保存，Ctrl+x退出   重新push到服务器	git push --no-thin origin HEAD:refs/for/master
+	git log	查看历史提交记录
+	git status	查看仓库当前的状态，显示有变更的文件。
+	git diff	比较文件的不同，即暂存区和工作区的差异。
+	git reset	回退版本。
+	git rm	删除工作区文件。
+	git mv	移动或重命名工作区文件
+	git blame <file>	以列表形式查看指定文件的历史修改记录
+	git remote	远程仓库操作
+	git fetch	从远程获取代码库
+	git pull	下载远程代码并合并
+	git push	上传远程代码并合并
+
+git分支管理
+	git branch 分支名	：创建分支
+	git checkout -b 分支名 ：创建分支
+	git branch	：查看分支
+	git branch -d branch_name	：删除分支
+	git branch -D branch_name	：删除分支
+
+	git checkout 分支名	：切换分支
+
+	git reset --hard HEAD	：撤销提交记录
+	git reset --soft HEAD
+	git reset HEAD
+	/*
+	HEAD 表示当前版本
+
+	HEAD^ 上一个版本
+	HEAD^^ 上上一个版本
+	HEAD^^^ 上上上一个版本
+	以此类推...
+
+	可以使用 ～数字表示
+	HEAD~0 表示当前版本
+	HEAD~1 上一个版本
+	HEAD^2 上上一个版本
+	HEAD^3 上上上一个版本
+	*/
+	
+更新分支
+	先切换到旧分支
+	git merge 新改动分支名	：分支合并
+	git cherry-pick 新改动分支名	 ：插入分支（提交点改动应用到当前分支）	
+
+# 提交到 Github
+	git remote add origin https://github.com/taofw/the-test.git
+	git push -u origin master
+	git remote	：查看远程仓库
+	git remote -v	： -v 参数，你还可以看到每个别名的实际链接地址。
+	git remote remove origin	：移除
+	git fetch		：从远程仓库下载分支与数据该命令执行完后需要执行 git merge 远程分支到你所在的分支。
+	git merge		：从远端仓库提取数据并尝试合并到当前分支：
+	git push origin master  ：添加文件到github，上传
+	git clone https://github.com/taofw/the-test.git	：克隆github代码
+	git clone -b 分支名 https://****************		：克隆分支
+	git pull	下载远程代码并合并
+
+
+
+Updates were rejected because the tip of your current branch is behind
+$ git pull origin master
+$ git push -u origin master
